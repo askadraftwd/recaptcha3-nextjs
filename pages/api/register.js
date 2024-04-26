@@ -3,7 +3,7 @@ const register = async (req, res) => {
 
   const { name, email, recaptchaResponse } = req.body;
 
-  const verifyUrl = `https://challenges.cloudflare.com/turnstile/v0/siteverify=${SECRET_KEY}&response=${recaptchaResponse}`;
+  const verifyUrl = `https://challenges.cloudflare.com/turnstile/v0/siteverify`;
 
   try {
     const recaptchaRes = await fetch(verifyUrl, { method: "POST" });
