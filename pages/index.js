@@ -80,11 +80,6 @@ export default function Home() {
         <meta name="description" content="reCaptcha v3 in Next.js" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <Script
-        src={`https://www.google.com/recaptcha/api.js?render=${SITE_KEY}`}
-      />
-
       <main className={styles.main}>
         <h1 className={styles.title}>reCaptcha v3 with Next.js</h1>
         <p className={styles.description}>
@@ -114,6 +109,7 @@ export default function Home() {
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
+          <div class="cf-turnstile" data-sitekey="0x4AAAAAAAYXmO8ePstEqJV_" data-callback="javascriptCallback"></div>
           <div>
             <input
               type="submit"
