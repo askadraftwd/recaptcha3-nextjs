@@ -1,9 +1,9 @@
 const register = async (req, res) => {
-  const SECRET_KEY = process.env.RECAPTCHA_SECRETKEY;
+  const SECRET_KEY = 0x4AAAAAAAYXmPG032fOSHWmDUB1fambP3s;
 
   const { name, email, recaptchaResponse } = req.body;
 
-  const verifyUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${SECRET_KEY}&response=${recaptchaResponse}`;
+  const verifyUrl = `https://challenges.cloudflare.com/turnstile/v0/siteverify=${SECRET_KEY}&response=${recaptchaResponse}`;
 
   try {
     const recaptchaRes = await fetch(verifyUrl, { method: "POST" });
